@@ -4,7 +4,7 @@ let nombreIngresado   = prompt("¡Muchas gracias por elegirnos! Por favor ingres
 let apellidoIngresado = prompt("Ingresa tu apellido.");
 
 if((nombreIngresado !="") && (apellidoIngresado !="")){
-    alert("Nombre: "+nombreIngresado +"\nApellido: "+apellidoIngresado); 
+    alert("Bienvenido/a: "+nombreIngresado +" "+apellidoIngresado); 
 }else{
     alert("Error: Recorda ingresar tu nombre y tu apellido.");
 }
