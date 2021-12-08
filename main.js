@@ -1,5 +1,7 @@
 /* Formulario  */
 
+
+
 let nombreIngresado   = prompt("¡Muchas gracias por elegirnos! Por favor ingresa tu nombre.");
 let apellidoIngresado = prompt("Ingresa tu apellido.");
 
@@ -9,26 +11,40 @@ if((nombreIngresado !="") && (apellidoIngresado !="")){
     alert("Error: Recorda ingresar tu nombre y tu apellido.");
 }
 
-let torta1 = 15;
+
+let torta1 = 10;
+let precioTorta1 = 600;
+let nombreTorta1 = "Lemon pie"
+
 let torta2 = 8;
-let torta3 = 17;
-let torta4 = 9;
-let torta5 = 12;
-let torta6 = 5;
-let torta7 = 25;
+let precioTorta2 = 800;
+let nombreTorta2 = "Budin marmolado"
 
 
+const multiplicar  = (a,b) => a * b;
 
 
 let cantidad = prompt("Hola" +" "+ nombreIngresado + " " + "por favor ingrese la cantidad de productos que desea.");
-for(let torta1 = 1; torta1 < 150; torta1++) {
-    
-if (torta1 == 15) {
-   break;
-}
 
-alert ("¡Perfecto!" + " " +nombreIngresado +" "+" Ahora para finalizar le pedimos que complete el formulario."+ " " + "Le informamos que el stock disponible es" +" "+torta1)
-}
-let stock = torta1 - cantidad;
+
+for(let i = 1; i < 1000; i++) {
+
+
+   if (cantidad <= torta1) {
+       torta1 -=cantidad;
+       console.log(torta1)
+       let precioTotal = (multiplicar (precioTorta1,cantidad));
+   
+     
+   if(precioTotal > 300) {
+           precioTotal = (multiplicar (precioTotal, 1));
+          
+     alert ("¡Perfecto! su importe a abonar es "+"$"+ precioTotal+"\nAhora para finalizar le pedimos que complete el formulario.") 
+     
+   }}
+
+ }
+
+let stocktorta1 = torta1 - cantidad;
 
 
