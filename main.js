@@ -11,29 +11,33 @@ if((nombreIngresado !="") && (apellidoIngresado !="")){
     alert("Error: Recorda ingresar tu nombre y tu apellido.");
 }
 
+function Producto(nombre, precio, stock){
+    this.nombre = nombre
+    this.precio = precio
+    this.stock  = stock
+    this.stockTotal = function (cantidad){
+        this.stock -= cantidad
+}}
 
-let torta1 = 10;
-let precioTorta1 = 600;
-let nombreTorta1 = "Lemon pie"
 
-let torta2 = 8;
-let precioTorta2 = 800;
-let nombreTorta2 = "Budin marmolado"
 
+
+const producto1 = {nombre: "Lemon pie", precio: 600, stock: 10}
+const producto2 = {nombre: "Torta Mani", precio: 800, stock: 8}
+const producto3 = new Producto ("Rosa de chocolate", 900, 7)
 
 const multiplicar  = (a,b) => a * b;
 
 
 let cantidad = prompt("Hola" +" "+ nombreIngresado + " " + "por favor ingrese la cantidad de productos que desea.");
 
+for(let i = 1; i < 50; i++) {
 
-for(let i = 1; i < 1000; i++) {
 
-
-   if (cantidad <= torta1) {
-       torta1 -=cantidad;
-       console.log(torta1)
-       let precioTotal = (multiplicar (precioTorta1,cantidad));
+   if (cantidad <= producto1.stock) {
+       producto1.stock -=cantidad;
+       console.log(producto1.stock)
+       let precioTotal = (multiplicar (producto1.precio,cantidad));
    
      
    if(precioTotal > 300) {
@@ -45,6 +49,7 @@ for(let i = 1; i < 1000; i++) {
 
  }
 
-let stocktorta1 = torta1 - cantidad;
 
-
+console.log(producto1.nombre.toLowerCase())
+producto1.stockTotal(5)
+console.log(producto1.stock)
