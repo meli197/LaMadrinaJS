@@ -16,15 +16,15 @@ function Producto(nombre, precio, stock){
     this.precio = precio
     this.stock  = stock
     this.stockTotal = function (cantidad){
-        this.stock -= cantidad
+        this.stock += cantidad
 }}
 
 
 
 
-const producto1 = {nombre: "Lemon pie", precio: 600, stock: 10}
-const producto2 = {nombre: "Torta Mani", precio: 800, stock: 8}
-const producto3 = new Producto ("Rosa de chocolate", 900, 7)
+const producto1 = new Producto ("lemon pie",600,10)
+const producto2 = new Producto ("torta mani",800, 8)
+const producto3 = new Producto ("rosa de chocolate", 900, 7)
 
 const multiplicar  = (a,b) => a * b;
 
@@ -53,3 +53,20 @@ for(let i = 1; i < 50; i++) {
 console.log(producto1.nombre.toLowerCase())
 producto1.stockTotal(5)
 console.log(producto1.stock)
+
+const listaDeProductos = [producto1, producto2, producto3]
+
+
+for (const producto of listaDeProductos){
+    console.log(producto)
+}
+
+const listadeProductos = [];
+listaDeProductos.push (new Producto ("red velvet", 750, 6))
+listaDeProductos.push (new Producto ("selva negra", 675, 9))
+
+for (const producto of listaDeProductos){
+    console.log(producto)
+}
+
+const encontrado = listaDeProductos.find(elemento => elemento === producto3)
