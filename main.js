@@ -69,4 +69,6 @@ for (const producto of listaDeProductos){
     console.log(producto)
 }
 
-const encontrado = listaDeProductos.find(elemento => elemento === producto3)
+const encontrado = listaDeProductos.find(listadeProductos => listadeProductos === producto3)
+
+const economicos = listaDeProductos.filter(listaDeProductos => listadeProductos.precio < 700)
