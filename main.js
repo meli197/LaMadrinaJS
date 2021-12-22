@@ -11,7 +11,8 @@ if((nombreIngresado !="") && (apellidoIngresado !="")){
     alert("Error: Recorda ingresar tu nombre y tu apellido.");
 }
 
-function Producto(nombre, precio, stock){
+function Producto(id, nombre, precio, stock){
+    this.id = id
     this.nombre = nombre
     this.precio = precio
     this.stock  = stock
@@ -22,11 +23,11 @@ function Producto(nombre, precio, stock){
 
 
 
-const producto1 = new Producto ("lemon pie",600,10)
-const producto2 = new Producto ("torta mani",800, 8)
-const producto3 = new Producto ("rosa de chocolate", 900, 7)
+const producto1 = new Producto (1,"lemon pie",600,10)
+const producto2 = new Producto (2,"torta mani",800, 8)
+const producto3 = new Producto (3,"rosa de chocolate", 900, 7)
 
-const multiplicar  = (a,b) => a * b;
+const calcularPrecio  = (a,b) => a * b;
 
 
 let cantidad = prompt("Hola" +" "+ nombreIngresado + " " + "por favor ingrese la cantidad de productos que desea.");
@@ -37,14 +38,15 @@ for(let i = 1; i < 50; i++) {
    if (cantidad <= producto1.stock) {
        producto1.stock -=cantidad;
        console.log(producto1.stock)
-       let precioTotal = (multiplicar (producto1.precio,cantidad));
+       let precioTotal = (calcularPrecio (producto1.precio,cantidad));
+       
    
      
    if(precioTotal > 300) {
-           precioTotal = (multiplicar (precioTotal, 1));
+           precioTotal = (calcularPrecio (precioTotal, 1));
           
      alert ("¡Perfecto! su importe a abonar es "+"$"+ precioTotal+"\nAhora para finalizar le pedimos que complete el formulario.") 
-     
+     break;
    }}
 
  }
@@ -62,13 +64,25 @@ for (const producto of listaDeProductos){
 }
 
 const listadeProductos = [];
-listaDeProductos.push (new Producto ("red velvet", 750, 6))
-listaDeProductos.push (new Producto ("selva negra", 675, 9))
+listaDeProductos.push (new Producto (4,"red velvet", 750, 6))
+listaDeProductos.push (new Producto (5,"selva negra", 675, 9))
 
 for (const producto of listaDeProductos){
     console.log(producto)
 }
 
-const encontrado = listaDeProductos.find(listadeProductos => listadeProductos === producto3)
 
-const economicos = listaDeProductos.filter(listaDeProductos => listadeProductos.precio < 700)
+const economicos = listaDeProductos.filter(listaDeProductos => listaDeProductos.precio < 700)
+
+let grilla = document.getElementById(grilla)
+
+
+for (const producto of listaDeProductos){
+    let card = document.createElement("div")
+    card.innerHTML = `<h2> ${producto.nombre} </h2>
+                      <p> Precio: ${producto.precio} </p>
+                      <p> Stock disponible: ${producto.stock} </p> `
+
+
+grilla.appendChild(card)                     
+}

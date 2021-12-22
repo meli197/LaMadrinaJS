@@ -146,17 +146,17 @@ a{
 
 @keyframes mi-animacion {
     0% {
-        width: 100px;
+        width: 15%;
         background: salmon;
         color: white;
     }
     50% {
-        width: 1000px;
+        width: 50%;
         background: lightpink;
         color: white;
     }
     100% {
-        width: 1400px;
+        width: 100%;
         background: white;
         color: salmon;
     }
@@ -164,8 +164,7 @@ a{
 }
 
 div.animation {
-    width: 1447px;
-    height: 100px;
+    width: 100%;
     background: white;
     background-size: cover;
     animation-name: mi-animacion;
