@@ -74,6 +74,13 @@ for (const producto of listaDeProductos){
 
 const economicos = listaDeProductos.filter(listaDeProductos => listaDeProductos.precio < 700)
 
+let miFormulario      = document.getElementById("formulario");
+miFormulario.addEventListener("submit", validarFormulario);
+
+function validarFormulario(e){
+    e.preventDefault();
+    console.log("Formulario Enviado"); }
+    
 let grilla = document.getElementById(grilla)
 
 
@@ -86,3 +93,5 @@ for (const producto of listaDeProductos){
 
 grilla.appendChild(card)                     
 }
+
+
